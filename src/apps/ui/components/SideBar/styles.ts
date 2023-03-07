@@ -37,3 +37,10 @@ export const UserEmail = styled.span`
   font-family:'Lato';
   color:${root.colors.blackScale.p5};
 `
+
+export const MenuArea = styled.nav`
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:0 10px;
+`
