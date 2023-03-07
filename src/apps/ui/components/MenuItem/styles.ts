@@ -21,6 +21,8 @@ export const Box = styled.div<{ active: boolean; }>`
   &:hover {
     background-color:${root.colors.primary};
   }
+
+  transition:background-color .2s;
 `
 
 export const Text = styled.span`

@@ -9,7 +9,14 @@ export const Box = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
-  gap:20px;
+  padding:30px 0;
+`
+
+export const Container = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
 `
 
 export const ProfileContainer = styled.div`
@@ -26,6 +33,7 @@ export const UserArea = styled.div`
   align-items:center;
   display:flex;
   flex-direction:column;
+  gap:10px;
 
   img {
     height:80px;
@@ -43,4 +51,13 @@ export const MenuArea = styled.nav`
   flex-direction:column;
   gap:5px;
   padding:0 10px;
+`
+
+export const OtherLinksArea = styled.div`
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:20px 20px 0;
+  margin:0 30px;
+  border-top: 2px solid ${root.colors.primary};
 `
