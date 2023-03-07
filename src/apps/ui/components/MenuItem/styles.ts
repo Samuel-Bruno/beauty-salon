@@ -2,8 +2,13 @@ import styled from "styled-components"
 import { root } from "../../assets/styles.main"
 
 
-export const Box = styled.div<{ active: boolean; }>`
+export const Box = styled.div<{ active: boolean; modeltwo?: boolean; }>`
   width:100%;
+  ${p => p.modeltwo === true ?
+    `height:${p.active ? '109px' : '27px'}` :
+    'height:auto;'
+  };
+  overflow:hidden;
 
   a {
     text-decoration:none;
@@ -14,7 +19,7 @@ export const Box = styled.div<{ active: boolean; }>`
     font-family:Lato;
     font-weight:500;
   }
-  padding:5px 0 5px 15px;
+  padding:5px 15px;
   background-color:${p => p.active ? root.colors.primary : root.colors.secondary};
   border-radius:6px;
 
@@ -27,4 +32,28 @@ export const Box = styled.div<{ active: boolean; }>`
 
 export const Text = styled.span`
   font-size:${root.sizes.small.s4};
+`
+
+export const UpperArea = styled.div``
+
+export const SubLinks = styled.div`
+  width:100%;
+  padding-left:40px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+`
+
+export const FinancialLink = styled.div<{ active: boolean; }>`
+  color:rgba(255,255,255,0.5);
+
+  a {
+    width:100%;
+    color:${p => p.active == true ? 'rgba(255,255,255,1)' : 'currentColor'};
+  }
+  transition:color .2s;
+
+  &:hover {
+    color:rgba(255,255,255,1);
+  }
 `

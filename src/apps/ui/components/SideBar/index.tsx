@@ -33,7 +33,7 @@ const SideBar = () => {
           <MenuItem Icon={ServicesIcon} linkTo={"services"} text="Serviços" />
           <MenuItem Icon={StorageIcon} linkTo={"storage"} text="Estoque" />
           <MenuItem Icon={ReportsIcon} linkTo={"reports"} text="Relatórios" />
-          <MenuItem Icon={FinancialIcon} linkTo={"financial"} text="Financeiro" />
+          <MenuItem Icon={FinancialIcon} linkTo={"financial"} text="Financeiro" type='model2' />
         </S.MenuArea>
         <S.OtherLinksArea>
           <MenuItem Icon={SettingsIcon} linkTo={"settings"} text="Configurações" />
