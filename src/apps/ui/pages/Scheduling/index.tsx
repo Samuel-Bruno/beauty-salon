@@ -1,4 +1,5 @@
 import React from 'react'
+import SideBar from '../../components/SideBar'
 import * as S from './styles'
 
 
@@ -6,7 +7,9 @@ const SchedulingPage = () => {
 
 
   return (
-    <S.Page>SchedulingPage</S.Page>
+    <S.Page>
+      <SideBar />
+    </S.Page>
   )
 
 }

@@ -1,6 +1,3 @@
-import { Route } from "react-router-dom";
-
-
 const ApiRoutes = [
   {
     path: 'api',
