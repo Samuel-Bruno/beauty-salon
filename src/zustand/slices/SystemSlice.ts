@@ -2,6 +2,8 @@ import { StoreInterface } from "../store";
 
 export interface SystemStateInterface {
   activePage: string;
+  baseScheduleLineHeight: number;
+  openingHour: string;
 }
 
 export type SystemSliceActions = {

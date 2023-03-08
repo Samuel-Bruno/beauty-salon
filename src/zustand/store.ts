@@ -19,6 +19,8 @@ export const useStore = create<StoreInterface>((set) => ({
   },
   system: {
     activePage: '/',
+    baseScheduleLineHeight: 25,
+    openingHour: '08:00'
   },
   actions: {
     user: UserSlice(set)

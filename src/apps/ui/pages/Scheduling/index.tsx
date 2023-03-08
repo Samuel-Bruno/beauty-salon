@@ -7,12 +7,15 @@ import Button from '../../components/Buttons'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow.svg"
+import { Professionals as professionals } from '../../_falseData/professionals'
+import { useStore } from '../../../../zustand/store'
 
 
 const SchedulingPage = () => {
 
-  const professionals: any[] = []
   const bookings: any[] = []
+
+  const baseHeight = useStore(state => state.system.baseScheduleLineHeight)
 
 
   return (
@@ -30,14 +33,29 @@ const SchedulingPage = () => {
         </S.UpperOptions>
 
         <S.ScheduleArea>
-          <S.HoursLabels></S.HoursLabels>
-          {professionals.map((p, k) => (
-            <ProfessionalScheduleItem
-              professional={p}
-              key={k}
-              bookings={bookings.filter(b => b.professionalId === p.id)}
-            />
-          ))}
+          <S.HoursLabels baseHeight={baseHeight}>
+            <S.HourLabel>08:00</S.HourLabel>
+            <S.HourLabel>09:00</S.HourLabel>
+            <S.HourLabel>10:00</S.HourLabel>
+            <S.HourLabel>11:00</S.HourLabel>
+            <S.HourLabel>12:00</S.HourLabel>
+            <S.HourLabel>13:00</S.HourLabel>
+            <S.HourLabel>14:00</S.HourLabel>
+            <S.HourLabel>15:00</S.HourLabel>
+            <S.HourLabel>16:00</S.HourLabel>
+            <S.HourLabel>17:00</S.HourLabel>
+            <S.HourLabel>18:00</S.HourLabel>
+          </S.HoursLabels>
+          <S.BookingsArea>
+            {professionals.map((p, k) => (
+              <ProfessionalScheduleItem
+                professional={p}
+                key={k}
+                bookings={bookings.filter(b => b.professionalId === p.id)}
+                baseHeight={baseHeight}
+              />
+            ))}
+          </S.BookingsArea>
         </S.ScheduleArea>
       </S.Main>
     </S.Page>
