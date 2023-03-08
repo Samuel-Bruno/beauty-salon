@@ -28,9 +28,10 @@ export const root = {
       s3: '2.4em',
     },
     big: {
-      s1: '3.8em',
-      s2: '4.2em',
-      s3: '4.4em',
+      s1: '3.2em',
+      s2: '3.8em',
+      s3: '4.2em',
+      s4: '4.4em',
     },
     enourmous: {
       s1: '5.8em',
