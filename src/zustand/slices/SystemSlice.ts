@@ -1,16 +1,14 @@
 import { StoreInterface } from "../store";
 
-export interface UserStateInterface {
-  logged: boolean;
-  profileImage?: string;
-  userEmail?: string;
+export interface SystemStateInterface {
+  activePage: string;
 }
 
-export type UserSliceActions = {
+export type SystemSliceActions = {
   setProfileImage: (img: string) => void
 }
 
-const UserSlice = (
+const SystemSlice = (
   (
     set: (partial: StoreInterface | Partial<StoreInterface> |
       (
@@ -19,12 +17,12 @@ const UserSlice = (
   ) => {
 
     return ({
-      setProfileImage: (img: string) => (
+      setActivePage: (page: string) => (
         set(state => ({
           ...state,
-          user: {
-            ...state.user,
-            profileImage: img
+          system: {
+            ...state.system,
+            activePage: page
           }
         }))
       )
@@ -32,4 +30,4 @@ const UserSlice = (
   })
 
 
-export default UserSlice
+export default SystemSlice

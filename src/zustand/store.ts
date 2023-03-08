@@ -1,20 +1,26 @@
 import { create } from "zustand"
-import { SystemInterface } from "./slices/system"
-import UserSlice, { UserInterface } from "./slices/UserSlice"
+import { SystemStateInterface } from "./slices/SystemSlice"
+import UserSlice, { UserStateInterface, UserSliceActions } from "./slices/UserSlice"
 
 
-export const useStore = create<{
-  user: UserInterface,
-  system: SystemInterface,
-}>((set) => ({
+export interface StoreInterface {
+  user: UserStateInterface,
+  system: SystemStateInterface,
+  actions: {
+    user: UserSliceActions
+  }
+}
+
+
+export const useStore = create<StoreInterface>((set) => ({
   user: {
     logged: false,
+    profileImage: ''
   },
   system: {
-    activePage: '/'
+    activePage: '/',
+  },
+  actions: {
+    user: UserSlice(set)
   }
-  // setUserPhoto
-  // ...UserSlice
-})
-
-)
+}))

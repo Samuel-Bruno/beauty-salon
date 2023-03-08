@@ -2,8 +2,8 @@ import React from 'react'
 import * as S from './styles'
 
 import MenuItem from '../MenuItem'
+import { useStore } from '../../../../zustand/store'
 
-import UserProfileExampleImage from '../../assets/images/2.jpg'
 import { ReactComponent as SchedulingIcon } from '../../assets/icons/calendar.svg'
 import { ReactComponent as ClientsIcon } from '../../assets/icons/clients.svg'
 import { ReactComponent as ProfessionalsIcon } from '../../assets/icons/professionals.svg'
@@ -16,13 +16,15 @@ import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg'
 
 const SideBar = () => {
 
+  const user = useStore(store => store.user)
+
 
   return (
     <S.Box>
       <S.Container>
         <S.UserArea>
           <S.ProfileContainer>
-            <img src={UserProfileExampleImage} alt="Sua foto de perfil" />
+            <img src={user.profileImage} alt="Sua foto de perfil" />
           </S.ProfileContainer>
           <S.UserEmail>voce.usuario@hotmail.com</S.UserEmail>
         </S.UserArea>
