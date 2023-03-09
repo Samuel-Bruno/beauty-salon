@@ -2,11 +2,11 @@ import styled from "styled-components"
 import { root } from "../../assets/styles.main";
 
 
-export const Box = styled.div<{ baseMargin: number; height: number; additionalMT: number; }>`
+export const Box = styled.div<{ baseMargin: number; height: number; additionalMT: number; bgColor: string; }>`
   position:absolute;
   margin-top:${p => p.baseMargin + p.additionalMT}px;
   border-radius:4px;
-  background-color:#FFECA7;
+  background-color:${p => p.bgColor};
   width:100%;
   min-height:${p => p.height}px;
   padding:${p => p.height > 50 ? '10px' :

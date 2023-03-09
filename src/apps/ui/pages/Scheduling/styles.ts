@@ -14,6 +14,9 @@ export const Main = styled.main`
   flex:1;
   display:flex;
   flex-direction:column;
+  position:relative;
+  width:100%;
+  max-width: calc(100% - 260px);
 `
 
 export const PageTitle = styled.h1`
@@ -46,10 +49,9 @@ export const DateText = styled.span`
 `
 
 export const ScheduleArea = styled.div`
-  max-width:100%;
   width:100%;
   flex:1;
-  overflow:scroll;
+  overflow:auto;
   display:flex;
   gap:5px;
 `
@@ -59,7 +61,9 @@ export const HoursLabels = styled.div<{ baseHeight: number; }>`
   flex-direction:column;
   gap:${p => ((p.baseHeight * 4) - (+root.sizes.small.s1.split('em')[0]) * 4) - 3.2}px;
   margin-top:${p => p.baseHeight}px;
-  transform:translateY(36px);
+  position:absolute;
+  transform:translateY(36px) translateX(-110%);
+  z-index:3;
 `
 
 export const HourLabel = styled.span`

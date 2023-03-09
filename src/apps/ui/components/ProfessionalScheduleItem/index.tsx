@@ -66,20 +66,16 @@ const ProfessionalScheduleItem = ({ professional, bookings, baseHeight }: Props)
           <S.Line />
           <S.Line />
         </>
-        <BookCard
-          initialHour={"09:15"}
-          finalHour={"10:00"}
-          clientName={"Alguém"}
-          serviceName={'Algum serviço'}
-          baseMargin={baseHeight}
-        />
-        <BookCard
-          initialHour={"10:15"}
-          finalHour={"10:30"}
-          clientName={"Alguém"}
-          serviceName={'Algum serviço'}
-          baseMargin={baseHeight}
-        />
+        {bookings.map((b, k) => (
+          <BookCard
+            key={k}
+            initialHour={b.initialHour}
+            finalHour={b.finalHour}
+            clientName={b.clientName}
+            serviceName={b.serviceName}
+            baseMargin={baseHeight}
+          />
+        ))}
       </S.Lines>
     </S.Box>
   )

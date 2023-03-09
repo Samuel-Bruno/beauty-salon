@@ -4,6 +4,7 @@ export interface SystemStateInterface {
   activePage: string;
   baseScheduleLineHeight: number;
   openingHour: string;
+  scheduleColors: string[];
 }
 
 export type SystemSliceActions = {

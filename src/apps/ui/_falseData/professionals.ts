@@ -12,4 +12,24 @@ export const Professionals: Professional[] = [
     name: 'Cicrana',
     img: ProfOne,
   },
+  {
+    id: 2,
+    name: 'Beltrana',
+    img: ProfOne,
+  },
+  {
+    id: 3,
+    name: 'Beltrana',
+    img: ProfOne,
+  },
+  {
+    id: 4,
+    name: 'Beltrana',
+    img: ProfOne,
+  },
+  {
+    id: 5,
+    name: 'Beltrana',
+    img: ProfOne,
+  },
 ]

@@ -69,13 +69,17 @@ const BookCard = ({ initialHour, finalHour, clientName, serviceName, baseMargin 
     return totalHeight
   }, [sys.baseScheduleLineHeight])
 
+  const getRandomColor = () => sys.scheduleColors[
+    Math.ceil((Math.random() * sys.scheduleColors.length)-1)
+  ]
+
   useEffect(() => {
     setAddMarginTop(() => calcMarginTop(initialHour))
     setBookHeight(() => getBookHeight(initialHour, finalHour))
   }, [setAddMarginTop, setBookHeight, calcMarginTop, getBookHeight, initialHour, finalHour])
 
   return (
-    <S.Box height={bookHeight} baseMargin={baseMargin} additionalMT={addMt}>
+    <S.Box height={bookHeight} baseMargin={baseMargin} additionalMT={addMt} bgColor={getRandomColor()}>
       <S.MainInfo inMinHeigh={bookHeight < 50}>
         {bookHeight > 50 &&
           <S.ClientName>{clientName}</S.ClientName>

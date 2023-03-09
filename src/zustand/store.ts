@@ -20,7 +20,11 @@ export const useStore = create<StoreInterface>((set) => ({
   system: {
     activePage: '/',
     baseScheduleLineHeight: 25,
-    openingHour: '08:00'
+    openingHour: '08:00',
+    scheduleColors: [
+      '#FFECA7',
+      '#FFCFFA',
+    ]
   },
   actions: {
     user: UserSlice(set)

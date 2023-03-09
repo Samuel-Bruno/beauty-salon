@@ -1,5 +1,8 @@
 import React from 'react'
 import * as S from './styles'
+import { useStore } from '../../../../zustand/store'
+import { Professionals as professionals } from '../../_falseData/professionals'
+import { Bookings as bookings } from '../../_falseData/bookings'
 
 import SideBar from '../../components/SideBar'
 import ProfessionalScheduleItem from '../../components/ProfessionalScheduleItem'
@@ -7,13 +10,9 @@ import Button from '../../components/Buttons'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow.svg"
-import { Professionals as professionals } from '../../_falseData/professionals'
-import { useStore } from '../../../../zustand/store'
 
 
 const SchedulingPage = () => {
-
-  const bookings: any[] = []
 
   const baseHeight = useStore(state => state.system.baseScheduleLineHeight)
 
