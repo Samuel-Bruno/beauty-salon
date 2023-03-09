@@ -19,7 +19,7 @@ const SchedulingPage = () => {
 
   return (
     <S.Page>
-      <SideBar />
+      <SideBar activePage={'/'} />
       <S.Main>
         <S.PageTitle>Agenda do dia</S.PageTitle>
         <S.UpperOptions>

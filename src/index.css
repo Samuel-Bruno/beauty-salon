@@ -27,3 +27,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
+
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+}
+select::-ms-expand {
+  display:none;
+}

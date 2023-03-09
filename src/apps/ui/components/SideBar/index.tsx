@@ -14,7 +14,12 @@ import { ReactComponent as FinancialIcon } from '../../assets/icons/financial.sv
 import { ReactComponent as SettingsIcon } from '../../assets/icons/settings.svg'
 import { ReactComponent as LogoutIcon } from '../../assets/icons/logout.svg'
 
-const SideBar = () => {
+
+type Props = {
+  activePage: string;
+}
+
+const SideBar = ({ activePage }: Props) => {
 
   const user = useStore(store => store.user)
 
@@ -29,17 +34,17 @@ const SideBar = () => {
           <S.UserEmail>voce.usuario@hotmail.com</S.UserEmail>
         </S.UserArea>
         <S.MenuArea>
-          <MenuItem Icon={SchedulingIcon} linkTo={"/"} text="Agendamentos" />
-          <MenuItem Icon={ClientsIcon} linkTo={"clients"} text="Clientes" />
-          <MenuItem Icon={ProfessionalsIcon} linkTo={"professionals"} text="Funcionários" />
-          <MenuItem Icon={ServicesIcon} linkTo={"services"} text="Serviços" />
-          <MenuItem Icon={StorageIcon} linkTo={"storage"} text="Estoque" />
-          <MenuItem Icon={ReportsIcon} linkTo={"reports"} text="Relatórios" />
-          <MenuItem Icon={FinancialIcon} linkTo={"financial"} text="Financeiro" type='model2' />
+          <MenuItem Icon={SchedulingIcon} linkTo={"/"} text="Agendamentos" activePage={activePage} />
+          <MenuItem Icon={ClientsIcon} linkTo={"clients"} text="Clientes" activePage={activePage} />
+          <MenuItem Icon={ProfessionalsIcon} linkTo={"professionals"} text="Funcionários" activePage={activePage} />
+          <MenuItem Icon={ServicesIcon} linkTo={"services"} text="Serviços" activePage={activePage} />
+          <MenuItem Icon={StorageIcon} linkTo={"storage"} text="Estoque" activePage={activePage} />
+          <MenuItem Icon={ReportsIcon} linkTo={"reports"} text="Relatórios" activePage={activePage} />
+          <MenuItem Icon={FinancialIcon} linkTo={"financial"} text="Financeiro" type='model2' activePage={activePage} />
         </S.MenuArea>
         <S.OtherLinksArea>
-          <MenuItem Icon={SettingsIcon} linkTo={"settings"} text="Configurações" />
-          <MenuItem Icon={LogoutIcon} linkTo={"logout"} text="Sair" />
+          <MenuItem Icon={SettingsIcon} linkTo={"settings"} text="Configurações" activePage={activePage} />
+          <MenuItem Icon={LogoutIcon} linkTo={"logout"} text="Sair" activePage={activePage} />
         </S.OtherLinksArea>
       </S.Container>
     </S.Box>

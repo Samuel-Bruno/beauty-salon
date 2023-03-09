@@ -1,14 +1,15 @@
+import ClientsPage from "../pages/Clients"
 import SchedulingPage from "../pages/Scheduling"
 
 const UiRoutes = [
   {
-    path: '',
     index: true,
+    path: '',
     element: <SchedulingPage />
   },
   {
     path: 'clients',
-    element: <></>
+    element: <ClientsPage />
   },
   {
     path: 'professionals',
