@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import * as S from './styles'
 import { useStore } from '../../../../zustand/store'
-import { Clients, filterCategories } from '../../_falseData/clients'
+import { Client, Clients, filterCategories } from '../../_falseData/clients'
 
 import SideBar from '../../components/SideBar'
 import Button from '../../components/Buttons'
@@ -10,15 +10,45 @@ import { Option as OptionType } from '../../components/FilterBy'
 import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
+import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg"
 
 
 const ClientsPage = () => {
 
   const [filterType, setFilterType] = useState(filterCategories[0])
+  const [tableColumns, setTableColumns] = useState<string[]>([])
+  const [clientsList, setClientsList] = useState<any[]>([])
 
   const handleChangeFilter = (op: OptionType) => {
     setFilterType(op)
   }
+
+  useEffect(() => {
+    const getList = () => {
+      let c = []
+      for (let i in filterCategories) { c.push(filterCategories[i].label) }
+      return c
+    }
+    const excludeIdFromClient = (c: Client) => ({
+      name: c.name,
+      phone: c.phone,
+      telephone: c.telephone,
+      address: c.address,
+      birthDate: c.birthDate,
+    })
+
+    const list = getList()
+    let cNewList: any[] = []
+
+    Clients.forEach(cl => {
+      const client = excludeIdFromClient(cl)
+      cNewList.push(client)
+    })
+
+    setTableColumns(list)
+    setClientsList(cNewList)
+  }, [])
+
 
   return (
     <S.Page>
@@ -35,7 +65,17 @@ const ClientsPage = () => {
             onChange={(e) => handleChangeFilter(e)}
           />
         </S.FilterArea>
-        <Table />
+        <S.TableArea>
+          <Table
+            columns={filterCategories}
+            icons={
+              <>
+                <ExpandIcon width={24} />
+              </>
+            }
+            items={clientsList}
+          />
+        </S.TableArea>
       </S.Main>
     </S.Page>
   )

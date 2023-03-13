@@ -35,16 +35,16 @@ const SideBar = ({ activePage }: Props) => {
         </S.UserArea>
         <S.MenuArea>
           <MenuItem Icon={SchedulingIcon} linkTo={"/"} text="Agendamentos" activePage={activePage} />
-          <MenuItem Icon={ClientsIcon} linkTo={"clients"} text="Clientes" activePage={activePage} />
-          <MenuItem Icon={ProfessionalsIcon} linkTo={"professionals"} text="Funcionários" activePage={activePage} />
-          <MenuItem Icon={ServicesIcon} linkTo={"services"} text="Serviços" activePage={activePage} />
-          <MenuItem Icon={StorageIcon} linkTo={"storage"} text="Estoque" activePage={activePage} />
-          <MenuItem Icon={ReportsIcon} linkTo={"reports"} text="Relatórios" activePage={activePage} />
-          <MenuItem Icon={FinancialIcon} linkTo={"financial"} text="Financeiro" type='model2' activePage={activePage} />
+          <MenuItem Icon={ClientsIcon} linkTo={"/clients"} text="Clientes" activePage={activePage} />
+          <MenuItem Icon={ProfessionalsIcon} linkTo={"/professionals"} text="Funcionários" activePage={activePage} />
+          <MenuItem Icon={ServicesIcon} linkTo={"/services"} text="Serviços" activePage={activePage} />
+          <MenuItem Icon={StorageIcon} linkTo={"/storage"} text="Estoque" activePage={activePage} />
+          <MenuItem Icon={ReportsIcon} linkTo={"/reports"} text="Relatórios" activePage={activePage} />
+          <MenuItem Icon={FinancialIcon} linkTo={"/financial"} text="Financeiro" type='model2' activePage={activePage} />
         </S.MenuArea>
         <S.OtherLinksArea>
-          <MenuItem Icon={SettingsIcon} linkTo={"settings"} text="Configurações" activePage={activePage} />
-          <MenuItem Icon={LogoutIcon} linkTo={"logout"} text="Sair" activePage={activePage} />
+          <MenuItem Icon={SettingsIcon} linkTo={"/settings"} text="Configurações" activePage={activePage} />
+          <MenuItem Icon={LogoutIcon} linkTo={"/logout"} text="Sair" activePage={activePage} />
         </S.OtherLinksArea>
       </S.Container>
     </S.Box>

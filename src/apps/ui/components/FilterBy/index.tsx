@@ -6,6 +6,7 @@ import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg'
 export type Option = {
   id: number;
   label: string;
+  originalLabel: string;
 }
 
 type Props = {
@@ -31,7 +32,7 @@ const FilterBy = ({ options, activeFilter, onChange }: Props) => {
           <S.SelectTitle>{activeFilter.label}</S.SelectTitle>
           <ArrowIcon width={12} />
         </S.SelectMain>
-        <S.OptionsArea display={displayingOptions}>
+        <S.OptionsArea display={String(displayingOptions)}>
           {options.map((op, k) => (
             <S.Option key={k} onClick={() => onPick(op)}>{op.label}</S.Option>
           ))}

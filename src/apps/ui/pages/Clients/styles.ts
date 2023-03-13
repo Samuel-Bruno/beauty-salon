@@ -34,3 +34,9 @@ export const Header = styled.header`
 export const FilterArea = styled.div`
   margin:20px 0 40px;
 `
+
+export const TableArea = styled.div`
+  flex:1;
+  overflow-y:auto;
+  padding-right:5px;
+`

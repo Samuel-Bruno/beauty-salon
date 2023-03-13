@@ -41,8 +41,8 @@ export const SelectTitle = styled.span`
   font-size:12px;
 `
 
-export const OptionsArea = styled.div<{ display: boolean; }>`
-  display:${p => p.display ? 'block' : 'none'};
+export const OptionsArea = styled.div<{ display: string; }>`
+  display:${p => p.display === 'true' ? 'block' : 'none'};
   position:absolute;
   top:calc(100% + 5px);
   width:100%;
@@ -51,6 +51,7 @@ export const OptionsArea = styled.div<{ display: boolean; }>`
   box-shadow: 0 2px 9px 2px ${root.colors.blackScale.p1};
   background-color:white;
   padding:0;
+  z-index:5;
 `
 
 export const Option = styled.div`
