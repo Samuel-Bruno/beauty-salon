@@ -1,24 +1,21 @@
-import React, { useEffect } from 'react'
-import { Option } from '../FilterBy';
+import React from 'react'
+import { Option } from '../../FilterBy';
 import * as S from './styles'
 
 
 type Props = {
-  // columns: string[];
   columns: Option[];
   items: any[];
-  // icons: boolean | JSX.Element;
   icons: boolean | React.ReactElement;
 }
 
-const Table = ({ columns, items, icons }: Props) => {
+const ProfessionalsTable = ({ columns, items, icons }: Props) => {
 
 
   const getIconsQt = () => {
     const t = icons as React.ReactElement<any, React.JSXElementConstructor<any>>
     return t.props.children.length
   }
-
 
   return (
     <S.Table iconsQnt={getIconsQt()}>
@@ -34,8 +31,18 @@ const Table = ({ columns, items, icons }: Props) => {
         {items.map((i, k) => (
           <S.TableRow key={k}>
             {Object.keys(i).map((content, iid) => (
-              <S.TableValue key={iid}>
-                <div>{i[content]}</div>
+              <S.TableValue key={iid} isPhoto={true}>
+                {content == 'photo' ?
+                  <S.PhotoWrapper>
+                    <S.Photo src={i[content]} />
+                  </S.PhotoWrapper> :
+                  (content == 'status') ? (
+                    <S.Status status={i[content]}>
+                      {i[content] === true ? 'Trabalhando' : 'De Folga'}
+                    </S.Status>
+                  ) :
+                    <div>{i[content]}</div>
+                }
               </S.TableValue>
             ))}
 
@@ -49,4 +56,4 @@ const Table = ({ columns, items, icons }: Props) => {
 }
 
 
-export default Table
+export default ProfessionalsTable

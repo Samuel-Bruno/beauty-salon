@@ -1,4 +1,5 @@
 import ClientsPage from "../pages/Clients"
+import ProfessionalsPage from "../pages/Professionals"
 import SchedulingPage from "../pages/Scheduling"
 
 const UiRoutes = [
@@ -8,27 +9,27 @@ const UiRoutes = [
     element: <SchedulingPage />
   },
   {
-    path: 'clients',
+    path: '/clients',
     element: <ClientsPage />
   },
   {
-    path: 'professionals',
+    path: '/professionals',
+    element: <ProfessionalsPage />
+  },
+  {
+    path: '/services',
     element: <></>
   },
   {
-    path: 'services',
+    path: '/storage',
     element: <></>
   },
   {
-    path: 'storage',
+    path: '/reports',
     element: <></>
   },
   {
-    path: 'reports',
-    element: <></>
-  },
-  {
-    path: 'financial',
+    path: '/financial',
     children: [
       {
         path: 'cashbox',

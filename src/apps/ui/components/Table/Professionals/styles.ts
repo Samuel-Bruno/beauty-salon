@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { root } from "../../assets/styles.main"
+import { root } from "../../../assets/styles.main"
 
 
 export const Table = styled.table<{ iconsQnt: number }>`
@@ -38,10 +38,7 @@ export const TableColumnTitle = styled.th`
   padding:10px 5px;
 `
 
-export const TableBody = styled.tbody`
-  // width:inhrerit;
-  // width:min-content;
-`
+export const TableBody = styled.tbody``
 
 export const TableRow = styled.tr`
   width:100%;
@@ -55,22 +52,48 @@ export const TableRow = styled.tr`
   }
 `
 
-export const TableValue = styled.td`
+export const TableValue = styled.td<{ isPhoto?: boolean; }>`
   div {
     text-align:left;
     font-size:${root.sizes.small.s2};
     font-weight:300;
-    width:${p => p.width};
-    padding: 0 5px;
+    padding: ${p => p.isPhoto ? '0' : '0 5px'};
+    ${p => p.isPhoto ? 'margin-left:5px;' : ''}
   }
 `
 
 export const IconsField = styled.td`
   text-align:center;
   position:absolute;
-  
-  // text-align:center;
   padding:0 5px;
   right:0;
   transform:translateX(100%);
+
+  svg {
+    cursor:pointer;
+  }
+`
+
+export const PhotoWrapper = styled.div`
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:blue;
+`
+
+export const Photo = styled.img`
+  height:100%;
+`
+
+export const Status = styled.span<{ status: boolean; }>`
+  font-size:${root.sizes.small.s2};
+  text-align:left;
+  font-weight:300;
+  color:${p => p.status === true ?
+    root.colors.various.green :
+    root.colors.blackScale.p3};
 `

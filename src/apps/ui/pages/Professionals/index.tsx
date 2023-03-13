@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import * as S from './styles'
-import { useStore } from '../../../../zustand/store'
-import { Client, Clients, filterCategories } from '../../_falseData/clients'
+import { Professional, Professionals, filterCategories } from '../../_falseData/professionals'
 
 import SideBar from '../../components/SideBar'
 import Button from '../../components/Buttons'
@@ -13,58 +12,60 @@ import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg"
 
 
-const ClientsPage = () => {
+const ProfessionalsPage = () => {
 
   const [filterType, setFilterType] = useState(filterCategories[0])
-  const [clientsList, setClientsList] = useState<any[]>([])
+  const [profesionalsList, setProfessionalsList] = useState<any[]>([])
 
   const handleChangeFilter = (op: OptionType) => {
     setFilterType(op)
   }
 
   useEffect(() => {
-    const excludeIdFromClient = (c: Client) => ({
-      name: c.name,
-      phone: c.phone,
-      telephone: c.telephone,
-      address: c.address,
-      birthDate: c.birthDate,
+    const excludeIdFromProfessional = (p: Professional) => ({
+      photo: p.img,
+      name: p.name,
+      phone: p.phone,
+      address: p.address,
+      birthDate: p.birthDate,
+      status: p.status,
     })
 
     let cNewList: any[] = []
 
-    Clients.forEach(cl => {
-      const client = excludeIdFromClient(cl)
-      cNewList.push(client)
+    Professionals.forEach(p => {
+      const prof = excludeIdFromProfessional(p)
+      cNewList.push(prof)
     })
-    setClientsList(cNewList)
+
+    setProfessionalsList(cNewList)
   }, [])
 
 
   return (
     <S.Page>
-      <SideBar activePage={'clients'} />
+      <SideBar activePage={'/professionals'} />
       <S.Main>
         <S.Header>
-          <S.PageTitle>Clientes</S.PageTitle>
-          <Button type='model1' icon={AddIcon} title='Novo cliente' />
+          <S.PageTitle>Profissionais</S.PageTitle>
+          <Button type='model1' icon={AddIcon} title='Novo profissional' />
         </S.Header>
         <S.FilterArea>
           <FilterBy
-            options={filterCategories}
+            options={filterCategories.filter(i=>i.originalLabel!=='img')}
             activeFilter={filterType}
             onChange={(e) => handleChangeFilter(e)}
           />
         </S.FilterArea>
         <S.TableArea>
-          <Table.clients
+          <Table.professionals
             columns={filterCategories}
             icons={
               <>
                 <ExpandIcon width={24} />
               </>
             }
-            items={clientsList}
+            items={profesionalsList}
           />
         </S.TableArea>
       </S.Main>
@@ -74,4 +75,4 @@ const ClientsPage = () => {
 }
 
 
-export default ClientsPage
+export default ProfessionalsPage

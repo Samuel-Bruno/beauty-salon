@@ -13,6 +13,9 @@ export const root = {
       p8: 'rgba(0,0,0,0.8)',
       p9: 'rgba(0,0,0,0.9)',
       p10: 'rgba(0,0,0,1)',
+    },
+    various: {
+      green: '#3D8831'
     }
   },
   sizes: {

@@ -1,4 +1,4 @@
-import { Option } from "../components/FilterBy";
+import { Option as FilterCategory } from "../components/FilterBy";
 
 export type Client = {
   id: any;
@@ -8,8 +8,6 @@ export type Client = {
   address: string;
   birthDate: string;
 }
-
-export type FilterCategory = Option
 
 export const Clients = [
   {
