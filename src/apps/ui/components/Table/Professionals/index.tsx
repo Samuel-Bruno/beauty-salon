@@ -6,14 +6,14 @@ import * as S from './styles'
 type Props = {
   columns: Option[];
   items: any[];
-  icons: boolean | React.ReactElement;
+  Icons: boolean | React.ReactElement;
 }
 
-const ProfessionalsTable = ({ columns, items, icons }: Props) => {
+const ProfessionalsTable = ({ columns, items, Icons }: Props) => {
 
 
   const getIconsQt = () => {
-    const t = icons as React.ReactElement<any, React.JSXElementConstructor<any>>
+    const t = Icons as React.ReactElement<any, React.JSXElementConstructor<any>>
     return t.props.children.length
   }
 
@@ -24,7 +24,7 @@ const ProfessionalsTable = ({ columns, items, icons }: Props) => {
           {columns.map((c, k) => (
             <S.TableColumnTitle key={k}>{c.label}</S.TableColumnTitle>
           ))}
-          {icons ? <S.Filler /> : false}
+          {Icons ? <S.Filler /> : false}
         </S.TableRow>
       </S.TableHead>
       <S.TableBody>
@@ -46,7 +46,7 @@ const ProfessionalsTable = ({ columns, items, icons }: Props) => {
               </S.TableValue>
             ))}
 
-            {icons ? <S.IconsField>{icons}</S.IconsField> : false}
+            {Icons ? <S.IconsField>{Icons}</S.IconsField> : false}
           </S.TableRow>
         ))}
       </S.TableBody>

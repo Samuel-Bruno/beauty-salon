@@ -59,7 +59,7 @@ const ClientsPage = () => {
         <S.TableArea>
           <Table.clients
             columns={filterCategories}
-            icons={
+            Icons={
               <>
                 <ExpandIcon width={24} />
               </>
