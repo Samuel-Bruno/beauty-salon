@@ -1,8 +1,9 @@
 import React from 'react'
 import { root } from '../../assets/styles.main';
 import { Professional } from '../../_falseData/professionals';
-import BookCard from '../BookCard';
 import * as S from './styles'
+
+import BookCard from '../BookCard';
 
 
 type Props = {

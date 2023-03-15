@@ -5,7 +5,7 @@ import { StorageType, Storage, filterCategories } from '../../_falseData/storage
 import SideBar from '../../components/SideBar'
 import Button from '../../components/Buttons'
 import { FilterBy } from '../../components/Selects'
-import { Option as OptionType } from '../../components/FilterBy'
+import { Option as OptionType } from '../../components/Selects/FilterBy'
 import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
@@ -48,10 +48,10 @@ const StoragePage = () => {
       <SideBar activePage={'/storage'} />
       <S.Main>
         <S.Header>
-          <S.PageTitle>Serviços</S.PageTitle>
+          <S.PageTitle>Estoque</S.PageTitle>
           <S.BtnsTopArea>
-            <Button type='model1' icon={AddIcon} title='Cadastrar produto' />
-            <Button type='model1' icon={BuyLogIcon} title='Registrar compra' />
+            <Button type='model1' Icon={AddIcon} title='Cadastrar produto' />
+            <Button type='model1' Icon={BuyLogIcon} title='Registrar compra' />
           </S.BtnsTopArea>
         </S.Header>
         <S.FilterArea>
@@ -62,7 +62,7 @@ const StoragePage = () => {
           />
         </S.FilterArea>
         <S.TableArea>
-          <Table.storage
+          <Table.Storage
             columns={filterCategories}
             Icons={
               <>

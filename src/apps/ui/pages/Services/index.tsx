@@ -5,7 +5,7 @@ import { Service, Services, filterCategories } from '../../_falseData/services'
 import SideBar from '../../components/SideBar'
 import Button from '../../components/Buttons'
 import { FilterBy } from '../../components/Selects'
-import { Option as OptionType } from '../../components/FilterBy'
+import { Option as OptionType } from '../../components/Selects/FilterBy'
 import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
@@ -48,7 +48,7 @@ const ServicesPage = () => {
       <S.Main>
         <S.Header>
           <S.PageTitle>Serviços</S.PageTitle>
-          <Button type='model1' icon={AddIcon} title='Novo serviço' />
+          <Button type='model1' Icon={AddIcon} title='Novo serviço' />
         </S.Header>
         <S.FilterArea>
           <FilterBy
@@ -58,7 +58,7 @@ const ServicesPage = () => {
           />
         </S.FilterArea>
         <S.TableArea>
-          <Table.services
+          <Table.Services
             columns={filterCategories}
             Icons={
               <>

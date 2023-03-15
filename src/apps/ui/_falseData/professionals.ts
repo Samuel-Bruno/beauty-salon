@@ -1,4 +1,4 @@
-import { Option as FilterCategory } from '../components/FilterBy';
+import { Option as FilterCategory } from '../components/Selects/FilterBy';
 import ProfOne from '../assets/images/5.jpg'
 
 export type Professional = {

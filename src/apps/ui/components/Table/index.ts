@@ -3,10 +3,15 @@ import ProfessionalsTable from './Professionals'
 import ServicesTable from './Services'
 import StorageTable from './Storage'
 
+import ChecksTable from './Checks'
 
-export default {
-  clients: ClientsTable,
-  professionals: ProfessionalsTable,
-  services: ServicesTable,
-  storage: StorageTable,
+const Tables = {
+  Clients: ClientsTable,
+  Professionals: ProfessionalsTable,
+  Services: ServicesTable,
+  Storage: StorageTable,
+  Checks: ChecksTable,
 }
+
+
+export default Tables

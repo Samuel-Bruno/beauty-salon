@@ -1,7 +1,8 @@
 import React from 'react'
-import { Option } from '../../FilterBy';
-import Toggler from '../../Toggler';
 import * as S from './styles'
+
+import { Option } from '../../Selects/FilterBy';
+import Toggler from '../../Toggler';
 
 
 type Props = {

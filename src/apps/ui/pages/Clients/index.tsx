@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import * as S from './styles'
-import { useStore } from '../../../../zustand/store'
 import { Client, Clients, filterCategories } from '../../_falseData/clients'
 
 import SideBar from '../../components/SideBar'
 import Button from '../../components/Buttons'
 import { FilterBy } from '../../components/Selects'
-import { Option as OptionType } from '../../components/FilterBy'
+import { Option as OptionType } from '../../components/Selects/FilterBy'
 import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
@@ -47,7 +46,7 @@ const ClientsPage = () => {
       <S.Main>
         <S.Header>
           <S.PageTitle>Clientes</S.PageTitle>
-          <Button type='model1' icon={AddIcon} title='Novo cliente' />
+          <Button type='model1' Icon={AddIcon} title='Novo cliente' />
         </S.Header>
         <S.FilterArea>
           <FilterBy
@@ -57,7 +56,7 @@ const ClientsPage = () => {
           />
         </S.FilterArea>
         <S.TableArea>
-          <Table.clients
+          <Table.Clients
             columns={filterCategories}
             Icons={
               <>

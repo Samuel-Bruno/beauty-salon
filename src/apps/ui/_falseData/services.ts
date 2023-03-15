@@ -1,4 +1,4 @@
-import { Option as ServiceCategory } from "../components/FilterBy"
+import { Option as ServiceCategory } from "../components/Selects/FilterBy"
 
 
 export type Service = {

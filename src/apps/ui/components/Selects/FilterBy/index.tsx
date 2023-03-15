@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as S from './styles'
 
-import { ReactComponent as ArrowIcon } from '../../assets/icons/arrow.svg'
+import { ReactComponent as ArrowIcon } from '../../../assets/icons/arrow.svg'
 
 export type Option = {
   id: number;

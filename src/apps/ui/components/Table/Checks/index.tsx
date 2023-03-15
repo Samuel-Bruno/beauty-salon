@@ -1,7 +1,6 @@
 import React from 'react'
-import * as S from './styles'
-
 import { Option } from '../../Selects/FilterBy';
+import * as S from './styles'
 
 
 type Props = {
@@ -10,8 +9,7 @@ type Props = {
   Icons: boolean | React.ReactElement;
 }
 
-const ClientsTable = ({ columns, items, Icons }: Props) => {
-
+const ChecksTable = ({ columns, items, Icons }: Props) => {
 
   const getIconsQt = () => {
     const t = Icons as React.ReactElement<any, React.JSXElementConstructor<any>>
@@ -26,7 +24,7 @@ const ClientsTable = ({ columns, items, Icons }: Props) => {
           {columns.map((c, k) => (
             <S.TableColumnTitle key={k}>{c.label}</S.TableColumnTitle>
           ))}
-          {Icons ? <S.Filler /> : false}
+          {Icons ? <S.Filler iconsQnt={getIconsQt()} /> : false}
         </S.TableRow>
       </S.TableHead>
       <S.TableBody>
@@ -48,4 +46,4 @@ const ClientsTable = ({ columns, items, Icons }: Props) => {
 }
 
 
-export default ClientsTable
+export default ChecksTable

@@ -7,7 +7,7 @@ type Props = {
   title: string;
 }
 
-const Model1 = ({ Icon, title }: Props) => {
+const Model2 = ({ Icon, title }: Props) => {
 
 
   return (
@@ -20,4 +20,4 @@ const Model1 = ({ Icon, title }: Props) => {
 }
 
 
-export default Model1
+export default Model2

@@ -1,4 +1,5 @@
 import ClientsPage from "../pages/Clients"
+import FinancialPage from "../pages/Financial"
 import ProfessionalsPage from "../pages/Professionals"
 import SchedulingPage from "../pages/Scheduling"
 import ServicesPage from "../pages/Services"
@@ -34,25 +35,25 @@ const UiRoutes = [
     path: '/financial',
     children: [
       {
-        path: 'cashbox',
+        path: '',
         index: true,
-        element: <></>
+        element: <FinancialPage subpage={'cashbox'} />
       },
       {
         path: 'cards',
-        element: <></>
+        element: <FinancialPage subpage={'cards'} />
       },
       {
         path: 'checks',
-        element: <></>
+        element: <FinancialPage subpage={'checks'} />
       },
       {
         path: 'clients',
-        element: <></>
+        element: <FinancialPage subpage={'clients'} />
       },
       {
         path: 'bills',
-        element: <></>
+        element: <FinancialPage subpage={'bills'} />
       },
     ]
   },

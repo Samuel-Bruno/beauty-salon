@@ -1,4 +1,4 @@
-import { Option as FilterCategory } from "../components/FilterBy";
+import { Option as FilterCategory } from "../components/Selects/FilterBy";
 
 export type Client = {
   id: any;

@@ -23,6 +23,8 @@ const SideBar = ({ activePage }: Props) => {
 
   const user = useStore(store => store.user)
 
+  console.log(activePage)
+
 
   return (
     <S.Box>
@@ -40,7 +42,7 @@ const SideBar = ({ activePage }: Props) => {
           <MenuItem Icon={ServicesIcon} linkTo={"/services"} text="Serviços" activePage={activePage} />
           <MenuItem Icon={StorageIcon} linkTo={"/storage"} text="Estoque" activePage={activePage} />
           <MenuItem Icon={ReportsIcon} linkTo={"/reports"} text="Relatórios" activePage={activePage} />
-          <MenuItem Icon={FinancialIcon} linkTo={"/financial"} text="Financeiro" type='model2' activePage={activePage} />
+          <MenuItem Icon={FinancialIcon} linkTo={activePage} text="Financeiro" type='model2' activePage={activePage} />
         </S.MenuArea>
         <S.OtherLinksArea>
           <MenuItem Icon={SettingsIcon} linkTo={"/settings"} text="Configurações" activePage={activePage} />

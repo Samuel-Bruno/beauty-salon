@@ -28,7 +28,7 @@ const SchedulingPage = () => {
             <ArrowIcon width={18} />
             <S.DateText>Ter, 07/02/2023</S.DateText>
           </S.DateArea>
-          <Button type="model1" icon={AddIcon} title="Agendar" />
+          <Button type="model1" Icon={AddIcon} title="Agendar" />
         </S.UpperOptions>
 
         <S.ScheduleArea>

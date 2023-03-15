@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react'
 import * as S from './styles'
+
+import { Link } from 'react-router-dom';
 
 
 type Props = {
@@ -30,20 +31,20 @@ const MenuItem = ({ linkTo, Icon, text, type = 'model1', activePage }: Props) =>
         </Link>
       </S.UpperArea>
       <S.SubLinks>
-        <S.FinancialLink active={activePage === linkTo}>
-          <Link to={'financial'}>Caixa</Link>
+        <S.FinancialLink active={activePage === '/financial'}>
+          <Link to={'/financial'}>Caixa</Link>
         </S.FinancialLink>
-        <S.FinancialLink active={activePage === 'financial/cards'}>
-          <Link to={'financial/cards'}>Cartões</Link>
+        <S.FinancialLink active={activePage === '/financial/cards'}>
+          <Link to={'/financial/cards'}>Cartões</Link>
         </S.FinancialLink>
-        <S.FinancialLink active={activePage === 'financial/checks'}>
-          <Link to={'financial/checks'}>Checks</Link>
+        <S.FinancialLink active={activePage === '/financial/checks'}>
+          <Link to={'/financial/checks'}>Cheques</Link>
         </S.FinancialLink>
-        <S.FinancialLink active={activePage === 'financial/clients'}>
-          <Link to={'financial/clients'}>Clients</Link>
+        <S.FinancialLink active={activePage === '/financial/clients'}>
+          <Link to={'/financial/clients'}>Clientes</Link>
         </S.FinancialLink>
-        <S.FinancialLink active={activePage === 'financial/bills'}>
-          <Link to={'financial/bills'}>Contas e despesas</Link>
+        <S.FinancialLink active={activePage === '/financial/bills'}>
+          <Link to={'/financial/bills'}>Contas e despesas</Link>
         </S.FinancialLink>
       </S.SubLinks>
     </S.Box>

@@ -1,4 +1,4 @@
-import { Option as StorageCategory } from "../components/FilterBy"
+import { Option as StorageCategory } from "../components/Selects/FilterBy"
 
 
 export type StorageType = {

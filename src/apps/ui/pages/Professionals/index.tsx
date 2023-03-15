@@ -5,7 +5,7 @@ import { Professional, Professionals, filterCategories } from '../../_falseData/
 import SideBar from '../../components/SideBar'
 import Button from '../../components/Buttons'
 import { FilterBy } from '../../components/Selects'
-import { Option as OptionType } from '../../components/FilterBy'
+import { Option as OptionType } from '../../components/Selects/FilterBy'
 import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
@@ -48,17 +48,17 @@ const ProfessionalsPage = () => {
       <S.Main>
         <S.Header>
           <S.PageTitle>Profissionais</S.PageTitle>
-          <Button type='model1' icon={AddIcon} title='Novo profissional' />
+          <Button type='model1' Icon={AddIcon} title='Novo profissional' />
         </S.Header>
         <S.FilterArea>
           <FilterBy
-            options={filterCategories.filter(i=>i.originalLabel!=='img')}
+            options={filterCategories.filter(i => i.originalLabel !== 'img')}
             activeFilter={filterType}
             onChange={(e) => handleChangeFilter(e)}
           />
         </S.FilterArea>
         <S.TableArea>
-          <Table.professionals
+          <Table.Professionals
             columns={filterCategories}
             Icons={
               <>

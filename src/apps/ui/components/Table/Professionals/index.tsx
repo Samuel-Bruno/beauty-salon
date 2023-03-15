@@ -1,6 +1,7 @@
 import React from 'react'
-import { Option } from '../../FilterBy';
 import * as S from './styles'
+
+import { Option } from '../../Selects/FilterBy';
 
 
 type Props = {
@@ -32,11 +33,11 @@ const ProfessionalsTable = ({ columns, items, Icons }: Props) => {
           <S.TableRow key={k}>
             {Object.keys(i).map((content, iid) => (
               <S.TableValue key={iid} isPhoto={true}>
-                {content == 'photo' ?
+                {content === 'photo' ?
                   <S.PhotoWrapper>
                     <S.Photo src={i[content]} />
                   </S.PhotoWrapper> :
-                  (content == 'status') ? (
+                  (content === 'status') ? (
                     <S.Status status={i[content]}>
                       {i[content] === true ? 'Trabalhando' : 'De Folga'}
                     </S.Status>

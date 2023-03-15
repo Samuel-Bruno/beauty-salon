@@ -5,7 +5,7 @@ import { root } from "../../assets/styles.main"
 export const Box = styled.div<{ active: boolean; modeltwo?: boolean; }>`
   width:100%;
   ${p => p.modeltwo === true ?
-    `height:${p.active ? '109px' : '27px'}` :
+    `height:${p.active ? '139px' : '27px'}` :
     'height:auto;'
   };
   overflow:hidden;
@@ -38,7 +38,7 @@ export const UpperArea = styled.div``
 
 export const SubLinks = styled.div`
   width:100%;
-  padding-left:40px;
+  padding:5px 0 5px 40px;
   display:flex;
   flex-direction:column;
   gap:5px;
@@ -49,7 +49,8 @@ export const FinancialLink = styled.div<{ active: boolean; }>`
 
   a {
     width:100%;
-    color:${p => p.active == true ? 'rgba(255,255,255,1)' : 'currentColor'};
+    color:${p => p.active === true ? 'rgba(255,255,255,1)' : 'currentColor'};
+    font-size:${root.sizes.small.s3};
   }
   transition:color .2s;
 
