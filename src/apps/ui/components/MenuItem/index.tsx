@@ -23,9 +23,15 @@ const MenuItem = ({ linkTo, Icon, text, type = 'model1', activePage }: Props) =>
       </Link>
     </S.Box>
   ) : (
-    <S.Box active={activePage === linkTo} modeltwo={true}>
+    <S.Box active={
+      activePage === '/financial' ||
+      activePage === '/financial/cards' ||
+      activePage === '/financial/checks' ||
+      activePage === '/financial/clients' ||
+      activePage === '/financial/bills'
+    } modeltwo={true}>
       <S.UpperArea>
-        <Link to={linkTo}>
+        <Link to={'/financial'}>
           <Icon width={16} />
           <S.Text>{text}</S.Text>
         </Link>
