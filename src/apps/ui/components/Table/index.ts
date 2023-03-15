@@ -5,6 +5,7 @@ import StorageTable from './Storage'
 
 import ChecksTable from './Checks'
 import CardsTable from './Cards'
+import FinancialClientsTable from './FinancialClients'
 
 const Tables = {
   Clients: ClientsTable,
@@ -14,6 +15,7 @@ const Tables = {
 
   Checks: ChecksTable,
   Cards: CardsTable,
+  FinancialClients: FinancialClientsTable,
 }
 
 

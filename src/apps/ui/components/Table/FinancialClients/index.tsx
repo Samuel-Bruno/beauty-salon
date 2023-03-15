@@ -1,6 +1,7 @@
 import React from 'react'
-import { Option } from '../../Selects/FilterBy';
 import * as S from './styles'
+
+import { Option } from '../../Selects/FilterBy';
 
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
   Icons: boolean | React.ReactElement;
 }
 
-const ClientsTable = ({ columns, items, Icons }: Props) => {
+const FinancialClientsTable = ({ columns, items, Icons }: Props) => {
 
 
   const getIconsQt = () => {
@@ -25,19 +26,26 @@ const ClientsTable = ({ columns, items, Icons }: Props) => {
           {columns.map((c, k) => (
             <S.TableColumnTitle key={k}>{c.label}</S.TableColumnTitle>
           ))}
-          {Icons ? <S.Filler /> : false}
+          <S.TableColumnTitle align='center'>Ações</S.TableColumnTitle>
         </S.TableRow>
       </S.TableHead>
       <S.TableBody>
         {items.map((i, k) => (
           <S.TableRow key={k}>
             {Object.keys(i).map((content, iid) => (
-              <S.TableValue key={iid}>
-                <div>{i[content]}</div>
+              <S.TableValue key={iid} isMoney={content === 'credit' || content === 'debit'} isZero={Number(i[content]) === 0} type={content}>
+                <div>
+                  {
+                    (content === 'credit' || content === 'debit') ?
+                      `R$ ${Number(i[content]).toFixed(2)}` :
+                      i[content]
+                  }
+                </div>
               </S.TableValue>
             ))}
-
-            {Icons ? <S.IconsField>{Icons}</S.IconsField> : false}
+            <S.TableValue isMoney={false}>
+              <div>{Icons}</div>
+            </S.TableValue>
           </S.TableRow>
         ))}
       </S.TableBody>
@@ -47,4 +55,4 @@ const ClientsTable = ({ columns, items, Icons }: Props) => {
 }
 
 
-export default ClientsTable
+export default FinancialClientsTable

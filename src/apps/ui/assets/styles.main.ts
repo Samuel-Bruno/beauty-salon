@@ -15,7 +15,10 @@ export const root = {
       p10: 'rgba(0,0,0,1)',
     },
     various: {
-      green: '#3D8831'
+      green: '#3D8831',
+      red: '#FF4545',
+      blue: '#3153CC',
+      lightRed: '#E07E8E'
     }
   },
   sizes: {

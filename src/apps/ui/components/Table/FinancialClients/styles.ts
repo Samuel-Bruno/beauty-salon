@@ -3,10 +3,7 @@ import { root } from "../../../assets/styles.main"
 
 
 export const Table = styled.table<{ iconsQnt: number }>`
-  width:${p => p.iconsQnt > 0 ?
-    `calc(100% - ((${p.iconsQnt * 24} - 5)px))` :
-    `calc(100% - 29px)`
-  };
+  width:100%;
   border-collapse:collapse;
   position:relative;
 `
@@ -21,15 +18,6 @@ export const TableHead = styled.thead`
   }
 `
 
-export const Filler = styled.td`
-  width:29px;
-  height:100%;
-  background-color:white;
-  position:absolute;
-  right:0;
-  transform:translateX(100%);
-`
-
 export const TableColumnTitle = styled.th`
   font-size:${root.sizes.small.s3};
   font-weight:700;
@@ -37,7 +25,7 @@ export const TableColumnTitle = styled.th`
   background-color:white;
   padding:10px 5px;
 
-  &:nth-last-child() {
+  &:last-child {
     text-align:center;
   }
 `
@@ -56,13 +44,28 @@ export const TableRow = styled.tr`
   }
 `
 
-export const TableValue = styled.td`
+export const TableValue = styled.td<{ isMoney: boolean; isZero?: boolean; type?: string; }>`
   div {
     display:flex;
     gap:5px;
     font-size:${root.sizes.small.s2};
     font-weight:300;
     padding: 0 5px;
+    color:${p => !p.isMoney ? root.colors.blackScale.p10 :
+    (p.isZero ?
+      root.colors.blackScale.p3 :
+      (
+        p.type === 'credit' ?
+          root.colors.various.green :
+          root.colors.various.red
+      )
+    )};
+  }
+
+  &:last-child {
+    div {
+      justify-content:center;
+    }
   }
 `
 
