@@ -2,6 +2,7 @@ import ClientsPage from "../pages/Clients"
 import ProfessionalsPage from "../pages/Professionals"
 import SchedulingPage from "../pages/Scheduling"
 import ServicesPage from "../pages/Services"
+import StoragePage from "../pages/Storage"
 
 const UiRoutes = [
   {
@@ -23,7 +24,7 @@ const UiRoutes = [
   },
   {
     path: '/storage',
-    element: <></>
+    element: <StoragePage />
   },
   {
     path: '/reports',
