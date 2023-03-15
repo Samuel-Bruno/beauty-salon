@@ -202,8 +202,8 @@ export const Services: Service[] = [
 
 export const filterCategories: ServiceCategory[] = [
   { id: 1, label: 'Nome', originalLabel: 'title' },
-  { id: 1, label: 'Tempo de execução', originalLabel: 'execution' },
-  { id: 1, label: 'Preço', originalLabel: 'price' },
-  { id: 1, label: 'Profisisonais capacitados', originalLabel: 'professionals' },
-  { id: 1, label: 'Oferecendo', originalLabel: 'offering' },
+  { id: 2, label: 'Tempo de execução', originalLabel: 'execution' },
+  { id: 3, label: 'Preço', originalLabel: 'price' },
+  { id: 4, label: 'Profisisonais capacitados', originalLabel: 'professionals' },
+  { id: 5, label: 'Oferecendo', originalLabel: 'offering' },
 ]

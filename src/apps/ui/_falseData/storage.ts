@@ -127,8 +127,8 @@ export const Storage: StorageType[] = [
 
 export const filterCategories: StorageCategory[] = [
   { id: 1, label: 'Nome', originalLabel: 'name' },
-  { id: 1, label: 'Categoria', originalLabel: 'category' },
-  { id: 1, label: 'Quantidade', originalLabel: 'qnt' },
-  { id: 1, label: 'Preço un', originalLabel: 'price' },
-  { id: 1, label: 'Preço total', originalLabel: 'total' },
+  { id: 2, label: 'Categoria', originalLabel: 'category' },
+  { id: 3, label: 'Quantidade', originalLabel: 'qnt' },
+  { id: 4, label: 'Preço un', originalLabel: 'price' },
+  { id: 5, label: 'Preço total', originalLabel: 'total' },
 ]

@@ -5,6 +5,7 @@ import SideBar from '../../components/SideBar'
 
 import CashBox from './CashBox'
 import Checks from './Checks'
+import Cards from './Cards'
 
 
 type Props = {
@@ -21,7 +22,7 @@ const FinancialPage = ({ subpage }: Props) => {
         el = <CashBox />
         break;
       case 'cards':
-        el = <CashBox />
+        el = <Cards />
         break;
       case 'checks':
         el = <Checks />
