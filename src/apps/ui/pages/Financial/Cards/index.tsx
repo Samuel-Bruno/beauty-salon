@@ -11,6 +11,7 @@ import { ReactComponent as ExtractIcon } from "../../../assets/icons/extract.svg
 import { ReactComponent as ArrowIcon } from "../../../assets/icons/arrow.svg"
 import { ReactComponent as ExpandIcon } from "../../../assets/icons/expand.svg"
 import Button from '../../../components/Buttons'
+import { ModalTypes } from '../../../components/_modal'
 
 
 const Checks = () => {
@@ -18,6 +19,14 @@ const Checks = () => {
   const [filterType, setFilterType] = useState(filterCategories[0])
 
   const [checksList, setChecksList] = useState<any[]>([])
+
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
+
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
 
   useEffect(() => {
     const excludeIdFromClient = (c: Card) => ({
@@ -50,8 +59,16 @@ const Checks = () => {
           <span>Cartões</span>
         </S.PageTitle>
         <S.BtnsTopArea>
-          <Button type='model1' Icon={AddIcon} title='Cadastrar cartão' />
-          <Button type='model1' Icon={ExtractIcon} title='Extrato dos cartões' />
+          <Button type='model1'
+            Icon={AddIcon}
+            title='Cadastrar cartão'
+            onClick={() => handleToggleModal('newbook')}
+            />
+          <Button type='model1'
+            Icon={ExtractIcon}
+            title='Extrato dos cartões'
+            onClick={() => handleToggleModal('newbook')}
+            />
         </S.BtnsTopArea>
       </S.Header>
       <FilterArea>

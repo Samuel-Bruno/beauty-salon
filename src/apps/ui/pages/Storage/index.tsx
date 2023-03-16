@@ -12,12 +12,21 @@ import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as BuyLogIcon } from "../../assets/icons/buylog.svg"
 import { ReactComponent as EditIcon } from "../../assets/icons/edit.svg"
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg"
+import { ModalTypes } from '../../components/_modal'
 
 
 const StoragePage = () => {
 
   const [filterType, setFilterType] = useState(filterCategories[0])
   const [storageList, setStorageList] = useState<any[]>([])
+
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
+
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
 
   const handleChangeFilter = (op: OptionType) => {
     setFilterType(op)
@@ -50,8 +59,18 @@ const StoragePage = () => {
         <S.Header>
           <S.PageTitle>Estoque</S.PageTitle>
           <S.BtnsTopArea>
-            <Button type='model1' Icon={AddIcon} title='Cadastrar produto' />
-            <Button type='model1' Icon={BuyLogIcon} title='Registrar compra' />
+            <Button
+              type='model1'
+              Icon={AddIcon}
+              title='Cadastrar produto'
+              onClick={()=>handleToggleModal('newbook')}
+              />
+            <Button
+              type='model1'
+              Icon={BuyLogIcon}
+              title='Registrar compra'
+              onClick={()=>handleToggleModal('newbook')}
+              />
           </S.BtnsTopArea>
         </S.Header>
         <S.FilterArea>

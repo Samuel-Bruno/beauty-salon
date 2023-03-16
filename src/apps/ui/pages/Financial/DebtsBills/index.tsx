@@ -9,6 +9,7 @@ import Table from '../../../components/Table'
 import { ReactComponent as ArrowIcon } from "../../../assets/icons/arrow.svg"
 import { ReactComponent as ExpandIcon } from "../../../assets/icons/expand.svg"
 import DateSelect from '../../../components/Selects/DateSelect'
+import { ModalTypes } from '../../../components/_modal'
 
 
 const DebtsBills = () => {
@@ -20,6 +21,14 @@ const DebtsBills = () => {
   const [finalDateFilter, setFinalDateFilter] = useState<any>('')
 
   const [checksList, setChecksList] = useState<any[]>([])
+
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
+
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
 
   useEffect(() => {
     const excludeIdFromBill = (b: Bill) => ({

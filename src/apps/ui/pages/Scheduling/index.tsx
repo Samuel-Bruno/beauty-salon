@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as S from './styles'
 import { useStore } from '../../../../zustand/store'
 import { Professionals as professionals } from '../../_falseData/professionals'
@@ -7,6 +7,7 @@ import { Bookings as bookings } from '../../_falseData/bookings'
 import SideBar from '../../components/SideBar'
 import ProfessionalScheduleItem from '../../components/ProfessionalScheduleItem'
 import Button from '../../components/Buttons'
+import Modal, { ModalTypes } from '../../components/_modal'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as ArrowIcon } from "../../assets/icons/arrow.svg"
@@ -16,9 +17,24 @@ const SchedulingPage = () => {
 
   const baseHeight = useStore(state => state.system.baseScheduleLineHeight)
 
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
+
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
 
   return (
     <S.Page>
+      {modalType !== null && modalShowing === true &&
+        <Modal
+          content={modalType}
+          showing={modalShowing}
+          closeModal={() => setModalShowing(false)}
+        />
+      }
+
       <SideBar activePage={'/'} />
       <S.Main>
         <S.PageTitle>Agenda do dia</S.PageTitle>
@@ -28,7 +44,11 @@ const SchedulingPage = () => {
             <ArrowIcon width={18} />
             <S.DateText>Ter, 07/02/2023</S.DateText>
           </S.DateArea>
-          <Button type="model1" Icon={AddIcon} title="Agendar" />
+          <Button type="model1"
+            Icon={AddIcon}
+            title="Agendar"
+            onClick={() => handleToggleModal('newbook')}
+          />
         </S.UpperOptions>
 
         <S.ScheduleArea>

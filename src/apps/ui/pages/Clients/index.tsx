@@ -10,12 +10,16 @@ import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg"
+import { ModalTypes } from '../../components/_modal'
 
 
 const ClientsPage = () => {
 
   const [filterType, setFilterType] = useState(filterCategories[0])
   const [clientsList, setClientsList] = useState<any[]>([])
+
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
 
   const handleChangeFilter = (op: OptionType) => {
     setFilterType(op)
@@ -39,6 +43,11 @@ const ClientsPage = () => {
     setClientsList(cNewList)
   }, [])
 
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
+
 
   return (
     <S.Page>
@@ -46,7 +55,11 @@ const ClientsPage = () => {
       <S.Main>
         <S.Header>
           <S.PageTitle>Clientes</S.PageTitle>
-          <Button type='model1' Icon={AddIcon} title='Novo cliente' />
+          <Button type='model1'
+            Icon={AddIcon}
+            title='Novo cliente'
+            onClick={() => handleToggleModal('newbook')}
+          />
         </S.Header>
         <S.FilterArea>
           <FilterBy

@@ -10,12 +10,21 @@ import Table from '../../components/Table'
 
 import { ReactComponent as AddIcon } from "../../assets/icons/add.svg"
 import { ReactComponent as ExpandIcon } from "../../assets/icons/expand.svg"
+import { ModalTypes } from '../../components/_modal'
 
 
 const ProfessionalsPage = () => {
 
   const [filterType, setFilterType] = useState(filterCategories[0])
   const [profesionalsList, setProfessionalsList] = useState<any[]>([])
+
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
+
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
 
   const handleChangeFilter = (op: OptionType) => {
     setFilterType(op)
@@ -48,7 +57,12 @@ const ProfessionalsPage = () => {
       <S.Main>
         <S.Header>
           <S.PageTitle>Profissionais</S.PageTitle>
-          <Button type='model1' Icon={AddIcon} title='Novo profissional' />
+          <Button
+            type='model1'
+            Icon={AddIcon}
+            title='Novo profissional'
+            onClick={() => handleToggleModal('newbook')}
+          />
         </S.Header>
         <S.FilterArea>
           <FilterBy

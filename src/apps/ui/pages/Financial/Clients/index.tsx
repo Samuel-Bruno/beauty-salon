@@ -8,6 +8,7 @@ import Table from '../../../components/Table'
 
 import { ReactComponent as ArrowIcon } from "../../../assets/icons/arrow.svg"
 import Button from '../../../components/Buttons'
+import { ModalTypes } from '../../../components/_modal'
 
 
 const Clients = () => {
@@ -15,6 +16,14 @@ const Clients = () => {
   const [filterType, setFilterType] = useState(filterCategories[0])
 
   const [checksList, setChecksList] = useState<any[]>([])
+
+  const [modalType, setModalType] = useState<null | ModalTypes>(null)
+  const [modalShowing, setModalShowing] = useState(false)
+
+  const handleToggleModal = (content: ModalTypes) => {
+    setModalType(content)
+    setModalShowing(!modalShowing)
+  }
 
   useEffect(() => {
     const excludeIdFromClient = (c: Client) => ({
@@ -60,10 +69,12 @@ const Clients = () => {
               <Button
                 title='Adicionar crédito'
                 type='model3'
+                onClick={() => handleToggleModal('newbook')}
               />
               <Button
                 title='Negociar dívida'
                 type='model4'
+                onClick={() => handleToggleModal('newbook')}
               />
             </>
           }

@@ -9,9 +9,10 @@ type Props = {
   type: 'model1' | 'model2' | 'model3' | 'model4'
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   title: string;
+  onClick: () => void;
 }
 
-const Button = ({ type, Icon, title }: Props) => {
+const Button = ({ type, Icon, title, onClick }: Props) => {
 
   let Btn = null;
   switch (type) {
@@ -33,8 +34,8 @@ const Button = ({ type, Icon, title }: Props) => {
   }
 
   return (Icon) ?
-    <Btn Icon={Icon} title={title} /> :
-    <Btn title={title} />
+    <Btn Icon={Icon} title={title} onClickAction={onClick} /> :
+    <Btn title={title} onClickAction={onClick} />
 
 }
 
