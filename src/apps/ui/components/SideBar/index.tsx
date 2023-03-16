@@ -23,8 +23,6 @@ const SideBar = ({ activePage }: Props) => {
 
   const user = useStore(store => store.user)
 
-  console.log(activePage)
-
 
   return (
     <S.Box>

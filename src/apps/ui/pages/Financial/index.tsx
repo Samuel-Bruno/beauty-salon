@@ -7,6 +7,7 @@ import CashBox from './CashBox'
 import Checks from './Checks'
 import Cards from './Cards'
 import Clients from './Clients'
+import DebtsBills from './DebtsBills'
 
 
 type Props = {
@@ -32,7 +33,7 @@ const FinancialPage = ({ subpage }: Props) => {
         el = <Clients />
         break;
       case 'bills':
-        el = <CashBox />
+        el = <DebtsBills />
         break;
       default:
         break;

@@ -19,7 +19,7 @@ export const PageTitle = styled.div`
 export const Header = styled.header`
   display:flex;
   justify-content:space-between;
-  align-items:flex-start;
+  align-items:center;
 `
 
 export const BtnsTopArea = styled.div`

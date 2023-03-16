@@ -28,7 +28,7 @@ export const PageTitle = styled.h1`
 export const Header = styled.header`
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:flex-start;
 `
 
 export const BtnsTopArea = styled.div`

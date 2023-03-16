@@ -7,7 +7,6 @@ export const Box = styled.div`
   display:flex;
   align-items:center;
   gap:10px;
-  margin-right:50px;
 `
 
 export const FilterTitle = styled.span`
@@ -30,6 +29,7 @@ export const SelectMain = styled.div`
   position:relative;
   width:inherit;
   heigh:fit-content;
+  color:${root.colors.primary};
 
   svg {
     transform:rotate(90deg);
@@ -37,6 +37,7 @@ export const SelectMain = styled.div`
 `
 
 export const SelectTitle = styled.span`
+  color:${root.colors.blackScale.p10};
   font-size:12px;
 `
 

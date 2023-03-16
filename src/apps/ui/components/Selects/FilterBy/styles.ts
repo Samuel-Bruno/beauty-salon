@@ -31,6 +31,7 @@ export const SelectMain = styled.div`
   position:relative;
   width:100%;
   heigh:fit-content;
+  color:${root.colors.primary};
 
   svg {
     transform:rotate(90deg);
@@ -38,6 +39,7 @@ export const SelectMain = styled.div`
 `
 
 export const SelectTitle = styled.span`
+  color:${root.colors.blackScale.p10};
   font-size:12px;
 `
 

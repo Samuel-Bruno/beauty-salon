@@ -41,6 +41,8 @@ export const BtnsTopArea = styled.div`
 export const FilterArea = styled.div`
   display:flex;
   margin:20px 0 40px;
+  gap:30px;
+  flex-wrap:wrap;
 `
 
 export const TableArea = styled.div`
