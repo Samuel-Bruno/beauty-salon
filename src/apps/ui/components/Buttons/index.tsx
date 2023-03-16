@@ -1,12 +1,14 @@
 import React from 'react'
+
 import Model1 from './Model1'
-import Model2 from './Model2';
-import Model3 from './Model3';
-import Model4 from './Model4';
+import Model2 from './Model2'
+import Model3 from './Model3'
+import Model4 from './Model4'
+import Model5 from './Model5'
 
 
 type Props = {
-  type: 'model1' | 'model2' | 'model3' | 'model4'
+  type: 'model1' | 'model2' | 'model3' | 'model4' | 'model5'
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   title: string;
   onClick: () => void;
@@ -27,6 +29,9 @@ const Button = ({ type, Icon, title, onClick }: Props) => {
       break;
     case 'model4':
       Btn = Model4
+      break;
+    case 'model5':
+      Btn = Model5
       break;
     default:
       Btn = Model1

@@ -17,36 +17,68 @@ type Props = {
   options: any[] | null;
   activeFilter: any;
   changeFn: (val: any) => void;
+} | {
+  title: string;
+  type: 'availables';
+  options: any[];
+  activeTime: any;
+  pickFn: (val: any) => void;
 }
 
 const FormField = (props: Props) => {
 
-  const { title, type, placeholder } = props
+  let El = null
 
-  if (type === 'input') {
-    const { changeTxt } = props
 
-    return (
-      <S.Box>
-        <S.Title>{title}</S.Title>
-        <S.Input placeholder={placeholder} onChange={(e) => changeTxt(e.target.value)} />
-      </S.Box>
-    )
-  } else {
-    const { options, activeFilter, changeFn } = props
+  const { title, type } = props
 
-    return (
-      <S.Box>
-        <S.Title>{title}</S.Title>
-        <FormSelect
-          title={placeholder}
-          options={options}
-          activeFilter={activeFilter}
-          onChange={(val) => changeFn(val)}
-        />
-      </S.Box>
-    )
+  switch (type) {
+    case 'input':
+      const { changeTxt } = props
+      let { placeholder } = props
+
+      El = (
+        <S.Box>
+          <S.Title>{title}</S.Title>
+          <S.Input placeholder={placeholder} onChange={(e) => changeTxt(e.target.value)} />
+        </S.Box>
+      )
+      break;
+    case 'select':
+      const { options, activeFilter, changeFn } = props
+      const pcholder = props.placeholder
+
+      El = (
+        <S.Box>
+          <S.Title>{title}</S.Title>
+          <FormSelect
+            title={pcholder}
+            options={options}
+            activeFilter={activeFilter}
+            onChange={(val) => changeFn(val)}
+          />
+        </S.Box>
+      )
+      break;
+    case 'availables':
+      const [opts, activeTime, pickFn] = [props.options, props.activeTime, props.pickFn]
+
+      El = (
+        <S.Box>
+          <S.Title>{title}</S.Title>
+          <S.TimesArea>
+            {opts.map((o, k) => (
+              <S.TimeOption key={k} picked={activeTime === o} onClick={e => pickFn(o)}>
+                {`${o.initialTime} - ${o.finalTime}`}
+              </S.TimeOption>
+            ))}
+          </S.TimesArea>
+        </S.Box>
+      )
+      break;
   }
+
+  return El
 
 }
 

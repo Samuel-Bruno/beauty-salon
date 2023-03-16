@@ -29,12 +29,20 @@ const FormSelect = ({ title, options, activeFilter, onChange }: Props) => {
     <S.Box>
       <S.Select>
         <S.SelectMain onClick={() => setDisplayingOptions(!displayingOptions)} >
-          <S.SelectTitle>{activeFilter !== null ? activeFilter.title : title}</S.SelectTitle>
+          <S.SelectTitle>
+            {
+              activeFilter !== null ?
+                (activeFilter.title ?? activeFilter.name) :
+                title
+            }
+          </S.SelectTitle>
           <ArrowIcon width={12} />
         </S.SelectMain>
         <S.OptionsArea display={String(displayingOptions)}>
           {options?.map((op, k) => (
-            <S.Option key={k} onClick={() => onPick(op)}>{op.title}</S.Option>
+            <S.Option key={k} onClick={() => onPick(op)}>
+              {op.title ?? op.name}
+            </S.Option>
           ))}
         </S.OptionsArea>
       </S.Select>
